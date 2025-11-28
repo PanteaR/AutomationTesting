@@ -1,7 +1,7 @@
 plugins {
     id 'java'
 }
-//This is my comany group it can be changed for whatever
+//This is the oveit company domain reversed as per java requirements
 group = 'com.oveit'
 //build version
 version = '0.0.1'
