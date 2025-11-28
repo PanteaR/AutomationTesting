@@ -35,6 +35,7 @@ under the "reports" folder. Open with any browser to see it.
 1. Gherkin -> adds support for cucumber
 2. Test Automation -> offers support for selenium and an integrated web inspector
 3. SonarQube for IDE -> linter for detecting dangerous code or potential bugs
+4. Cucumber for java -> makes easier to connect steps to glue code
 
 Enjoy!
 
