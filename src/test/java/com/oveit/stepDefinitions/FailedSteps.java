@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
-public class Failed {
+public class FailedSteps {
 
     WebDriver driver = Hooks.driver;
 

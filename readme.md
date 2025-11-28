@@ -30,6 +30,12 @@ Simplest way is just go to a feature and on the left click on the play button an
 After each run a HTML report and a XML report is generate in the project file
 under the "reports" folder. Open with any browser to see it.
 
-Ejoy!
+### Recommended plugins for intellij
+
+1. Gherkin -> adds support for cucumber
+2. Test Automation -> offers support for selenium and an integrated web inspector
+3. SonarQube for IDE -> linter for detecting dangerous code or potential bugs
+
+Enjoy!
 
 Andrei Soare
