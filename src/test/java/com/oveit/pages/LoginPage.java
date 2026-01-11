@@ -7,7 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.Properties;
 
 // page_url: https://practicesoftwaretesting.com/auth/login
 public class LoginPage {
@@ -20,7 +25,7 @@ public class LoginPage {
     @FindBy(css = "input#password")
     private WebElement passwordField;
 
-    @FindBy(css = "input[data-test=\"login-submit\"]")
+    @FindBy(css = "div[class=\"ripple\"]")
     private WebElement loginButton;
 
     //Web elements that can be either css or xpath
@@ -39,6 +44,29 @@ public class LoginPage {
         loginButton.click();
     }
 
+    public void loginPropertiesAccount() {
+        wait.until(ExpectedConditions.visibilityOf(emailField));
+        Properties prop = new Properties();
+        try {
+            Path path = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "credentials.properties");
+            prop.load(Files.newInputStream(path));
+
+            emailField.sendKeys(prop.getProperty("email"));
+            passwordField.sendKeys(prop.getProperty("pass"));
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        loginButton.click();
+    }
+    public void sleepForDebug()
+    {
+        try {
+            Thread.sleep(5000); // 5 secunde
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
     //Methods used for testing. Something quick and dirty for demonstration purposes
     public WebElement getAuthContainer() {
         return authContainer;

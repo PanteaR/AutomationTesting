@@ -1,6 +1,7 @@
 #Tags for grouping and running tests(can be as many as you want/need)
 @All
 @Smoke
+@Ramona
 
 
 #This test fails intentionally to exhibit how a failing test is displayed in console and report

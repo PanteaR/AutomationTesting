@@ -30,19 +30,15 @@ public class RegistrationSteps {
         clientRegistrationPage.fillClientAddressInfo(data.address, data.postCode, data.city, data.state, data.country, data.phone);
         clientRegistrationPage.fillClientAccountInfo(data.email, data.password);
         clientRegistrationPage.clickSubmit();
-
-
     }
 
     @Then("i should be successfully registered")
     public void iShouldBeSuccessfullyRegistered() {
         LoginPage loginPage = new LoginPage(driver);
         AccountPage accountPage = new AccountPage(driver);
-
         Assertions.assertTrue(loginPage.getAuthContainer().isDisplayed());
-
         loginPage.login(data.email, data.password);
-
         Assertions.assertEquals(accountPage.extractUsernameText(), data.firstName + " " + data.lastName);
     }
 }
+
